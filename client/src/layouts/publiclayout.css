@@ -1,0 +1,300 @@
+/* ================== ROOT VARIABLES ================== */
+:root {
+    --blue: #0a5aa8;
+    --red: #e41e26;
+    --white: #fff;
+    --dark: #0e1a24;
+    --gold: #f2c97d;
+    --green: #6faf8f;
+    --radius: 16px;
+    --header-height: 72px;
+    --footer-height: 70px;
+}
+
+/* ================== RESET ================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    font-family: system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+}
+
+/* ================== PAGE ================== */
+.page.dark {
+    background: linear-gradient(#0e1a24, #020b11);
+    color: var(--white);
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* ================== HEADER ================== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+}
+
+.glass {
+    background: rgba(119, 172, 223, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ===== LOGO (FIX CHUẨN) ===== */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--white);
+    font-size: 1.25rem;
+    white-space: nowrap;
+}
+
+.logo img {
+    width: 4em;
+    height: 4em;
+    object-fit: contain;
+    display: block;
+}
+
+/* ================== NAV ================== */
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav a {
+    color: #550140;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    padding: 8px 0;
+}
+
+.nav a:hover {
+    color: var(--gold);
+}
+
+/* MOBILE MENU BUTTON */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* ================== HERO ================== */
+.hero {
+    width: 100%;
+    height: 100vh;
+    min-height: 500px;
+    background: linear-gradient(rgba(180, 190, 243, 0.747),
+            rgba(235, 57, 57, 0.38)),
+        url("https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=2070") center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    padding-top: var(--header-height);
+}
+
+.hero-overlay {
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    max-width: 800px;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    margin: 16px 0 32px;
+    font-size: 1.25rem;
+    color: #f5ea55de;
+    max-width: 600px;
+}
+
+/* CTA */
+.cta {
+    width: 200px;
+    padding: 16px 32px;
+    background: var(--red);
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cta:hover {
+    background: #c21820;
+    transform: translateY(-2px);
+}
+
+/* ================== MAIN ================== */
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 60px 20px;
+    background: #f4f6f8;
+    color: #111;
+}
+
+/* ===== SIDEBAR NEWS (THAY HOTDEAL) ===== */
+.news {
+    width: 100%;
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 24px;
+    border-top: 6px solid var(--red);
+}
+
+.news h3 {
+    margin-bottom: 16px;
+    font-size: 1.1rem;
+}
+
+.news-item {
+    display: flex;
+    gap: 10px;
+    padding: 10px 0;
+    text-decoration: none;
+    color: #111;
+    border-bottom: 1px solid #eee;
+    transition: transform 0.3s;
+}
+
+.news-item:hover {
+    transform: translateX(4px);
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: var(--red);
+    border-radius: 50%;
+    margin-top: 6px;
+}
+
+/* CONTENT */
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.text {
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(4, 62, 128, 0.25);
+}
+
+.text * {
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+/* ================== FOOTER ================== */
+.footer {
+    background: #580303bd;
+    min-height: var(--footer-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: #9ca3af;
+}
+
+/* ================== TABLET ================== */
+@media (min-width: 768px) {
+    .main {
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 80px 40px;
+    }
+
+    .news {
+        width: 240px;
+        flex-shrink: 0;
+    }
+
+    .content {
+        flex: 1;
+        padding-left: 32px;
+    }
+}
+
+/* ================== MOBILE ================== */
+@media (max-width: 767px) {
+    :root {
+        --header-height: 60px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav {
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        background: rgba(10, 90, 168, 0.95);
+        flex-direction: column;
+        padding: 20px;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: 0.3s;
+    }
+
+    .nav.active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .nav a {
+        padding: 15px 0;
+        text-align: center;
+    }
+}
+
+/* ================== SMALL MOBILE ================== */
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1rem;
+    }
+
+    .logo img {
+        width: 22px;
+        height: 22px;
+    }
+
+    .hero h1 {
+        font-size: 1.75rem;
+    }
+}

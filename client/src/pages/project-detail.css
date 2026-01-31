@@ -1,0 +1,88 @@
+:root {
+    --blue: #0A5AA8;
+    --red: #E41E26;
+    --dark: #0E1A24;
+    --gold: #F2C97D;
+    --radius: 18px;
+}
+
+.project-detail {
+    padding: 40px;
+    background: #fff;
+    border-radius: var(--radius);
+}
+
+/* Back */
+.back-btn {
+    background: none;
+    border: none;
+    color: var(--blue);
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+/* Header */
+.project-header h1 {
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+.price {
+    font-size: 20px;
+    color: var(--red);
+    font-weight: 600;
+}
+
+/* Info */
+.project-info {
+    display: flex;
+    gap: 40px;
+    margin: 24px 0;
+}
+
+.project-info div span {
+    display: block;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+/* Description */
+.project-desc {
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+/* Gallery */
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: var(--radius);
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeUp .6s ease forwards;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform .6s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Animation */
+@keyframes fadeUp {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

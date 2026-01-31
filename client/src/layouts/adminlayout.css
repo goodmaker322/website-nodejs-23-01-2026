@@ -1,0 +1,73 @@
+:root {
+    --blue: #0A5AA8;
+    --dark: #0E1A24;
+    --gray: #f4f6f8;
+    --white: #ffffff;
+    --radius: 12px;
+}
+
+/* Layout */
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
+    background: var(--gray);
+}
+
+/* Sidebar */
+.admin-sidebar {
+    width: 240px;
+    background: linear-gradient(180deg, #0E1A24, #0A5AA8);
+    color: #fff;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-logo {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 32px;
+    letter-spacing: 1px;
+}
+
+/* Nav */
+.admin-nav a {
+    display: block;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    border-radius: var(--radius);
+    color: #e5e7eb;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background .3s ease, color .3s ease;
+}
+
+.admin-nav a:hover {
+    background: rgba(255, 255, 255, .12);
+    color: #fff;
+}
+
+/* Active */
+.admin-nav a.active {
+    background: #ffffff;
+    color: var(--dark);
+    font-weight: 600;
+}
+
+/* Logout */
+.logout-btn {
+    margin-top: auto;
+    padding: 12px;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    background: #E41E26;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Main */
+.admin-main {
+    flex: 1;
+    padding: 32px;
+}
