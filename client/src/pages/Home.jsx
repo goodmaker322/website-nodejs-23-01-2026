@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import api from "../api/axios";
 import { Link } from "react-router-dom";
 import "./home.css";
+import { getImageUrl } from '../utils/imageHelper';
 
 export default function Home() {
   const [projects, setProjects] = useState([]);
@@ -59,7 +60,7 @@ export default function Home() {
             ],
             [
               "CHỮ TẦM",
-              "Mục đích cuối cùng của                                                                                                                                                                                                                                  Hợp Nhất Land là khẳng định giá trị vượt trội của bản thân, của tập thể sao cho xứng TẦM là đơn vị phân phối bất động sản hàng đầu Việt Nam.",
+              "Mục đích cuối cùng của Hợp Nhất Land là khẳng định giá trị vượt trội của bản thân, của tập thể sao cho xứng TẦM là đơn vị phân phối bất động sản hàng đầu Việt Nam.",
             ],
           ].map((i, idx) => (
             <div key={idx} className="core-card">
@@ -97,7 +98,8 @@ export default function Home() {
         <div className="project-grid">
           {projects.map((p) => (
             <div key={p._id} className="project-card">
-              <img src={p.images?.[0] || "/placeholder.jpg"} alt={p.title} />
+              {/* ĐÂY LÀ DÒNG QUAN TRỌNG ĐÃ SỬA */}
+              <img src={getImageUrl(p.images?.[0])} alt={p.title} />
               <div className="project-overlay">
                 <h3>{p.title}</h3>
                 <Link to={`/projects/${p.slug}`}>Xem chi tiết →</Link>
@@ -106,6 +108,7 @@ export default function Home() {
           ))}
         </div>
       </section>
+      
       {/* TIN TỨC */}
       <section className="section dark reveal">
         <div className="container">
